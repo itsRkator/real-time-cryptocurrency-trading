@@ -1,0 +1,28 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - '4000:4000'
+    environment:
+      PORT: 4000
+      HOST: 0.0.0.0
+      CORS_ORIGINS: http://localhost:3000
+      MARKET_SEED: 42
+      LOG_LEVEL: info
+      NODE_ENV: production
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:4000
+        NEXT_PUBLIC_WS_URL: ws://localhost:4000/ws
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api
+    environment:
+      NODE_ENV: production

@@ -1,0 +1,11 @@
+{
+  "name": "@crypto/config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./tsconfig.base.json",
+  "files": [
+    "tsconfig.base.json",
+    "eslint.base.mjs"
+  ]
+}
