@@ -1,6 +1,0 @@
-{
-    "dotenv.enableSecretpeeking": true,
-    "dotenv.enableAutocloaking": true,
-    "dotenv.cloakColor": "",
-    "dotenv.cloakIcon": ""
-}
